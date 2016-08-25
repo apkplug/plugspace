@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        applicationId "com.kf5sdk.simpleapp"
+        minSdkVersion 13
+        targetSdkVersion 21
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':kF5SDKLibrary')
+    compile 'com.android.support:support-v4:23.+'
+    provided files('libs/osgi3.7.0.jar')
+}
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KF5PlugUser.iml" filepath="$PROJECT_DIR$/KF5PlugUser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kf5plug/demo.iml" filepath="$PROJECT_DIR$/kf5plug/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kF5SDKLibrary/kF5SDKLibrary.iml" filepath="$PROJECT_DIR$/kF5SDKLibrary/kF5SDKLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kf5plug/kf5plug.iml" filepath="$PROJECT_DIR$/kf5plug/kf5plug.iml" />
+    </modules>
+  </component>
+</project>
