@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+        minSdkVersion 11
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/universal-image-loader-1.9.4.jar')
+   // compile files('libs/PG_Effect_SDK.jar')
+    //compile files('libs/bigdata.jar')
+    compile files('libs/PG_Edit_Base_SDK.jar')
+}
