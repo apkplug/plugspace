@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
             public void onInstallSuccess(org.osgi.framework.Bundle bundle, PlugInfo plugInfo) {
                 Log.e("isntall s",bundle.getName());
 
-                initcia();
+                //initcia();
 
             }
 
             @Override
             public void onInstallFailuer(int i, PlugInfo plugInfo, String s) {
                 Log.e("install f",s);
-                initcia();
+                //initcia();
             }
 
             @Override
@@ -63,28 +63,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void initcia() {
-        DispatchAgent dispatchAgent = new DispatchAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
-        HashMap<String,Object> hashMap = new HashMap<>();
-        hashMap.put("AppId","6c16f74868044396a3d0bcd2443b7f0c");
-        hashMap.put("AuthKey","338611e4c15e4152bf59ca71e742a269");
-        dispatchAgent.call("http://apkplug.plug.com/cia/init", hashMap, new WorkerCallback() {
-            @Override
-            public void reply(URI uri, Object... objects) throws Exception {
-                Log.e("reply",objects[0].toString());
-            }
-
-            @Override
-            public void timeout(URI uri) throws Exception {
-
-            }
-
-            @Override
-            public void Exception(URI uri, Throwable throwable) {
-                Log.e("exception",throwable.getMessage());
-            }
-        });
-    }
+//    private void initcia() {
+//        DispatchAgent dispatchAgent = new DispatchAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
+//        HashMap<String,Object> hashMap = new HashMap<>();
+//        hashMap.put("AppId","6c16f74868044396a3d0bcd2443b7f0c");
+//        hashMap.put("AuthKey","338611e4c15e4152bf59ca71e742a269");
+//        dispatchAgent.call("apkplug://cia/init", hashMap, new WorkerCallback() {
+//            @Override
+//            public void reply(URI uri, Object... objects) throws Exception {
+//                Log.e("reply",objects[0].toString());
+//            }
+//
+//            @Override
+//            public void timeout(URI uri) throws Exception {
+//
+//            }
+//
+//            @Override
+//            public void Exception(URI uri, Throwable throwable) {
+//                Log.e("exception",throwable.getMessage());
+//            }
+//        });
+//    }
 
 
     public void onClick(View view){
@@ -92,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
 
         HashMap<String,Object> params = new HashMap<String, Object>();
         params.put("phone",mPhoneEt.getText().toString());
-        dispatchAgent.call("http://apkplug.plug.com/cia/verify", params, new WorkerCallback() {
+        params.put("AppId","6c16f74868044396a3d0bcd2443b7f0c");
+        params.put("AuthKey","338611e4c15e4152bf59ca71e742a269");
+        dispatchAgent.call("apkplug://cia/verify", params, new WorkerCallback() {
             @Override
             public void reply(URI uri, Object... objects) throws Exception {
                 Log.e("reply",objects[0].toString()+" "+objects[1]);

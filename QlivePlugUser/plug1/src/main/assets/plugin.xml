@@ -9,14 +9,14 @@
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
-
+    Bundle-Activator="com.qiniu.qlive.MainActivitor"
 >
     <processor
-        uri="http://apkplug.plug.com/qlive/login"
+        uri="apkplug://qlive/login"
         className="com.qiniu.qlive.processores.LoginProcessor"
     />
     <processor
-        uri="http://apkplug.plug.com/qlive/logout"
+        uri="apkplug://qlive/logout"
         className="com.qiniu.qlive.processores.LogoutProcessor"
     />
 

@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         String folderPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
                 .getAbsolutePath() + File.separator+"test.png";
         hashMap.put("ditPath",folderPath);
-        dispatchAgent.call("http://apkplug.plug.com/cam360/start", hashMap, new WorkerCallback() {
+        dispatchAgent.call("apkplug://cam360/start", hashMap, new WorkerCallback() {
             @Override
             public void reply(URI uri, Object... objects) throws Exception {
                 Log.e("reply",objects[0].toString());

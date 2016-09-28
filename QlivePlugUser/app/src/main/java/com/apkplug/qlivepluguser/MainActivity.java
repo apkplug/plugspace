@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         hashMap.put(MOBLE,"18801425179");
         hashMap.put(PASSWORD,"@Aa123456");
         hashMap.put(CONCTEXT,this);
-        dispatchAgent.call("http://apkplug.plug.com/qlive/login", hashMap, new WorkerCallback() {
+        dispatchAgent.call("apkplug://qlive/login", hashMap, new WorkerCallback() {
             @Override
             public void reply(URI uri, Object... objects) throws Exception {
                 if((boolean)objects[0]){

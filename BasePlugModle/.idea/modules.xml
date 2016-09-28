@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BasePlugModle.iml" filepath="$PROJECT_DIR$/BasePlugModle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plug/plug.iml" filepath="$PROJECT_DIR$/plug/plug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pluguser/pluguser.iml" filepath="$PROJECT_DIR$/pluguser/pluguser.iml" />
+    </modules>
+  </component>
+</project>

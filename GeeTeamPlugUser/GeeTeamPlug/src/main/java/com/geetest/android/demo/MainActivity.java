@@ -22,6 +22,7 @@ import com.geetest.android.sdk.GtDialog;
 import com.geetest.android.sdk.GtDialog.GtListener;
 
 public class MainActivity extends Activity {
+    public String ss;
 
     private Context context = MainActivity.this;
     //因为可能用户当时所处在低速高延迟网络，所以异步请求可能在后台用时很久才获取到验证的数据。可以自己设计状态指示器, demo仅作演示。

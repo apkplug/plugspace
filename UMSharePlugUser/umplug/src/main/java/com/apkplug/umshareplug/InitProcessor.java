@@ -20,7 +20,7 @@ public class InitProcessor extends BaseProcessor{
     @Override
     public void Receive(URI uri, HashMap<String, Object> hashMapin) {
 
-        List<HashMap<String,Object>> plateforms = (List<HashMap<String, Object>>) hashMapin.get(PlugConstants.PLATEPORMS);
+        List<HashMap<String,Object>> plateforms = (List<HashMap<String, Object>>) hashMapin.get(PlugConstants.INIT);
 
         for(HashMap<String,Object> hashMap : plateforms){
             String appid = (String) hashMap.get(PlugConstants.APPID);

@@ -9,10 +9,11 @@
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
+    Bundle-Activator="com.apkplug.cam360plug.MainActivitor"
 
 >
     <processor
-        uri="http://apkplug.plug.com/cam360/start"
+        uri="apkplug://cam360/start"
         className="com.apkplug.cam360plug.StartProcessor"
     />
 

@@ -9,14 +9,14 @@
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
-
+    Bundle-Activator="cn.ciaapp.cia_example.MainActivitor"
 >
     <processor
-        uri="http://apkplug.plug.com/cia/init"
+        uri="apkplug://cia/init"
         className="cn.ciaapp.cia_example.InitProcessor"
     />
     <processor
-            uri="http://apkplug.plug.com/cia/verify"
+            uri="apkplug://cia/verify"
             className="cn.ciaapp.cia_example.VerifyProcessor"
         />
 

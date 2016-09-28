@@ -4,20 +4,24 @@
 <plugin-features
     Bundle-Name="UMSharePlug"
     Bundle-SymbolicName="com.apkplug.umshareplug"
-    Bundle-Version="1.0.0"
+    Bundle-Version="4.0.7"
+    Bundle-Activator="com.apkplug.umshareplug.MainActivitor"
     date="2016.08.17"
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
     Use-Host-MetaData="true"
+    Use-Host-AppName="true"
+    plug_id="plug_user_20jF7dnvY2c"
+    Short-Links="http://yyfr.net/q1t"
 >
     <processor
-        uri="http://apkplug.plug.com/umshare/init"
+        uri="apkplug://umshare/init"
         className="com.apkplug.umshareplug.InitProcessor"
     />
 
     <processor
-        uri="http://apkplug.plug.com/umshare/share"
+        uri="apkplug://umshare/share"
         className="com.apkplug.umshareplug.ShareProessor"
     />
 

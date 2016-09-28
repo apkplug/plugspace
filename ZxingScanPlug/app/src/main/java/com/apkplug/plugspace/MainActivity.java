@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view){
         DispatchAgent dispatchAgent = new DispatchAgent(PlugManager.getInstance().getBundleContext());
-        dispatchAgent.call("http://apkplug.plug.com/zxing/start", null, new WorkerCallback() {
+        dispatchAgent.call("apkplug://zxing/start", null, new WorkerCallback() {
             @Override
             public void reply(URI uri, Object... objects) throws Exception {
                 if((boolean)objects[0]){

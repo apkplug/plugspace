@@ -1,6 +1,7 @@
 package cn.ciaapp.cia_example;
 
 import android.content.Intent;
+import android.util.Log;
 
 import org.osgi.framework.BundleContext;
 
@@ -22,6 +23,11 @@ public class VerifyProcessor extends BaseProcessor {
     public void Receive(URI uri, HashMap<String, Object> hashMap) {
 
         String phoneNumber = (String) hashMap.get("phone");
+        String appid = (String) hashMap.get("AppId");
+        String authKey = (String) hashMap.get("AuthKey");
+        Log.e("init",appid+" "+authKey);
+
+        CIAService.init(context.getBundleContext(), appid, authKey);
 
         CIAService.startVerification(phoneNumber, new VerificationListener() {
             /**

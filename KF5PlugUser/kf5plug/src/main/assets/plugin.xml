@@ -9,15 +9,15 @@
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
-
+    Bundle-Activator="com.apkplug.kf5plug.MainActivitor"
 >
     <processor
-        uri="http://apkplug.plug.com/kf5/userinfo"
+        uri="apkplug://kf5/userinfo"
         className="com.apkplug.kf5plug.UserInfoProcessor"
     />
 
     <processor
-        uri="http://apkplug.plug.com/kf5/openactivity"
+        uri="apkplug://kf5/openactivity"
         className="com.apkplug.kf5plug.OpenActivityProcessor"
     />
 

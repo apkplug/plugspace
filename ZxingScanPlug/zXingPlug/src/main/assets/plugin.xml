@@ -6,14 +6,17 @@
     Bundle-SymbolicName="com.apkplug.Zxing.Plug"
     Bundle-Version="1.0.0"
     Bundle-Activity="com.apkplug.Zxing.Plug.CaptureActivity"
+    Bundle-Activator="com.apkplug.Zxing.Plug.MainActivitor"
     date="2016.08.24"
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
-
+    Use-Host-MetaData="true"
+    plug_id="plug_user_20CAJaA6hkk"
+    Short-Links="http://yyfr.net/q1B"
 >
     <processor
-        uri="http://apkplug.plug.com/zxing/start"
+        uri="apkplug://zxing/start"
         className="com.apkplug.Zxing.Plug.processor.StartZxingProcessor"
     />
 

@@ -9,10 +9,13 @@
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
-
+    Use-Host-MetaData="true"
+    Short-Links="http://yyfr.net/q1v"
+    Bundle-Activator="com.geetest.android.MainActivitor"
+    plug_id="plug_user_20kCmMMkp56"
 >
     <processor
-        uri="http://apkplug.plug.com/geeteam/start"
+        uri="apkplug://geeteam/start"
         className="com.geetest.android.sdk.ShowGtDialogProcessor"
     />
 

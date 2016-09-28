@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onKefu(View v){
-        new DispatchAgent(PlugManager.getInstance().getBundleContext()).call("http://apkplug.plug.com/kf5/openactivity", null, new WorkerCallback() {
+        new DispatchAgent(PlugManager.getInstance().getBundleContext()).call("apkplug://kf5/openactivity", null, new WorkerCallback() {
             @Override
             public void reply(URI uri, Object... objects) throws Exception {
                 Log.e("reply",objects[0].toString());

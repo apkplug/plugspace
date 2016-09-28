@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     signingConfigs {
         config {
@@ -12,14 +11,13 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
     defaultConfig {
-        applicationId "com.apkplug.gesture"
+        applicationId "com.apkplug.umshareplug"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -28,12 +26,10 @@ android {
             signingConfig signingConfigs.config
         }
     }
-
     lintOptions {
         abortOnError false
     }
 }
-
 dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
@@ -45,9 +41,8 @@ dependencies {
     compile files('libs/SocialSDK_WeiXin_2.jar')
     compile files('libs/umeng_social_sdk.jar')
     compile files('libs/weiboSDKCore_3.1.4.jar')
-    provided files('libs/osgi3.7.0.jar')
+    provided files('libs/osgi3.9.0.jar')
 }
-
 task copyplug(type:Copy,group:"test",dependsOn:[build]){
     from ("build/outputs/apk/umplug-debug.apk")
     into("${project.rootDir.absolutePath}/app/src/main/assets/")
