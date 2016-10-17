@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/kF5SDKLibrary/kF5SDKLibrary.iml" filepath="$PROJECT_DIR$/kF5SDKLibrary/kF5SDKLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/kf5plug/kf5plug.iml" filepath="$PROJECT_DIR$/kf5plug/kf5plug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" filepath="$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" />
     </modules>
   </component>
 </project>

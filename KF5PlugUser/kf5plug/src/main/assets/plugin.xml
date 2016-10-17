@@ -4,12 +4,13 @@
 <plugin-features
     Bundle-Name="KF5Plug"
     Bundle-SymbolicName="com.kf5sdk.simpleapp"
-    Bundle-Version="1.0.0"
+    Bundle-Version="3.0.0"
     date="2016.08.23"
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
     Bundle-Activator="com.apkplug.kf5plug.MainActivitor"
+    plug_id="plug_user_20kEPEJg1sQ"
 >
     <processor
         uri="apkplug://kf5/userinfo"
@@ -21,4 +22,8 @@
         className="com.apkplug.kf5plug.OpenActivityProcessor"
     />
 
+    <rpc-processor
+        uri="apkplug://kf5/rpc/openactivity"
+        className="com.apkplug.kf5plug.RPCOpenKF5"
+        />
 </plugin-features>

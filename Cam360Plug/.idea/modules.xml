@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/PG_Edit_SDK/PG_Edit_SDK.iml" filepath="$PROJECT_DIR$/PG_Edit_SDK/PG_Edit_SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cam360plug/cam360plug.iml" filepath="$PROJECT_DIR$/cam360plug/cam360plug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" filepath="$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" />
     </modules>
   </component>
 </project>

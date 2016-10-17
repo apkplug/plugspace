@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.apkplug.Bundle.bundlerpc.ObjectPool;
+import org.apkplug.Bundle.bundlerpc.functions.Action2;
 import org.apkplug.Bundle.dispatch.DispatchAgent;
 
 import java.io.File;
@@ -114,23 +116,30 @@ public class StartActivity extends Activity {
             mImage.setImageBitmap(editResult.getThumbNail());
 
             Toast.makeText(this, "Photo saved to:" + editResult.getReturnPhotoPath(), Toast.LENGTH_LONG).show();
-            DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
-            dispatchAgent.reply(msgid,true);
+            //DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
+//            dispatchAgent.reply(msgid,true);
+            ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+            objectPool.popObject().call(true,"success");
             enterReEditState();
         }
 
         if (requestCode == PGEditSDK.PG_EDIT_SDK_REQUEST_CODE
                 && resultCode == PGEditSDK.PG_EDIT_SDK_RESULT_CODE_CANCEL) {
             Toast.makeText(this, "Edit cancelled!", Toast.LENGTH_SHORT).show();
-            DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
-            dispatchAgent.reply(msgid,false,"Edit cancelled");
+            //DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
+            //dispatchAgent.reply(msgid,false,"Edit cancelled");
+            ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+            objectPool.popObject().call(false,"Edit cancelled");
         }
 
         if (requestCode == PGEditSDK.PG_EDIT_SDK_REQUEST_CODE
                 && resultCode == PGEditSDK.PG_EDIT_SDK_RESULT_CODE_NOT_CHANGED) {
             Toast.makeText(this, "Photo do not change!", Toast.LENGTH_SHORT).show();
-            DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
-            dispatchAgent.reply(msgid,false,"Photo do not change");
+            //DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
+            //dispatchAgent.reply(msgid,false,"Photo do not change");
+
+            ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+            objectPool.popObject().call(false,"Photo do not change");
         }
     }
 

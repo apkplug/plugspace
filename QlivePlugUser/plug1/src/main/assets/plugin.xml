@@ -3,13 +3,14 @@
 <!-- 插件提供的功能(类) --> <!--插件的唯一标识 --> <!--插件的名称，可以不唯一 --> <!--启动优先级启动数字越大启动越晚 --> <!--加载后立即启动  当插件为其他插件子插件是就无效 -->
 <plugin-features
     Bundle-Name="EasePlug"
-    Bundle-SymbolicName="com.apkplug.qlive"
+    Bundle-SymbolicName="com.qiniu.qlive"
     Bundle-Version="1.0.0"
     date="2016.07.20"
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
     Bundle-Activator="com.qiniu.qlive.MainActivitor"
+    plug_id="plug_user_22QDqLOdh0A"
 >
     <processor
         uri="apkplug://qlive/login"
@@ -19,5 +20,10 @@
         uri="apkplug://qlive/logout"
         className="com.qiniu.qlive.processores.LogoutProcessor"
     />
+
+    <rpc-processor
+        uri="apkplug://qlive/rpc/login"
+        className="com.qiniu.qlive.RPCQLiveLogin"
+        />
 
 </plugin-features>

@@ -24,8 +24,10 @@ import android.os.Vibrator;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import com.apkplug.Zxing.Plug.processor.StartZxingProcessor;
+import com.common.IZxingStart;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.apkplug.Zxing.Plug.camera.CameraManager;
@@ -33,7 +35,10 @@ import com.apkplug.Zxing.Plug.decoding.CaptureActivityHandler;
 import com.apkplug.Zxing.Plug.decoding.InactivityTimer;
 import com.apkplug.Zxing.Plug.view.ViewfinderView;
 
-import org.apkplug.Bundle.dispatch.DispatchAgent;
+
+import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
+import org.apkplug.Bundle.bundlerpc.ObjectPool;
+import org.apkplug.Bundle.bundlerpc.functions.Action2;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -183,10 +188,16 @@ public class CaptureActivity extends Activity implements Callback,EasyPermission
 	{
 		inactivityTimer.onActivity();
 		playBeepSoundAndVibrate();
-		DispatchAgent dispatchAgent = new DispatchAgent(StartZxingProcessor.context);
-		int id = getIntent().getIntExtra("msgid",0);
-		dispatchAgent.reply(id,true,obj.getText(),barcode,this);
+		//DispatchAgent dispatchAgent = new DispatchAgent(StartZxingProcessor.context);
+//		int id = getIntent().getIntExtra("msgid",0);
+		//dispatchAgent.reply(id,true,obj.getText(),barcode,this);
 		//showDialog(obj, barcode);
+
+		ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+		objectPool.popObject().call(true,obj.getText());
+		//showDialog(obj,barcode);
+		Toast.makeText(this,obj.getText(),Toast.LENGTH_LONG).show();
+		finish();
 	}
 
 	private void showDialog(final Result obj, Bitmap barcode) {

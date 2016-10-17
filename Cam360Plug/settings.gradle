@@ -1,1 +1,1 @@
-include ':app', ':cam360plug', ':PG_Edit_SDK'
+include ':app', ':cam360plug', ':PG_Edit_SDK', ':libcommoninterface'

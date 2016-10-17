@@ -1,1 +1,1 @@
-include ':app', ':sdk', ':GeeTeamPlug'
+include ':app', ':sdk', ':GeeTeamPlug', ':libcommoninterface'

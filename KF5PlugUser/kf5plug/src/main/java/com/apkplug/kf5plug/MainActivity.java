@@ -22,6 +22,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -349,8 +350,8 @@ public class MainActivity extends Activity {
 //		kf5UserInfo.deviceToken = "";
 		kf5UserInfo.name = UserHelper.userName;
 		kf5UserInfo.phone = UserHelper.userPhone;
-		
-		
+
+		Log.e("userinfo","appid:"+kf5UserInfo.appId+" helpad:"+kf5UserInfo.helpAddress);
 		return kf5UserInfo;
 	}
 	
@@ -399,6 +400,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onFailure(String result) {
 				// TODO Auto-generated method stub
+				Log.e("fail",result);
 			}
 		});
 		

@@ -20,6 +20,8 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.shareboard.SnsPlatform;
 import com.umeng.socialize.utils.ShareBoardlistener;
 
+import org.apkplug.Bundle.bundlerpc.ObjectPool;
+import org.apkplug.Bundle.bundlerpc.functions.Action2;
 import org.apkplug.Bundle.dispatch.DispatchAgent;
 
 import java.lang.reflect.Field;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         imageView = (ImageView) findViewById(R.id.imageView);
         msgid = getIntent().getIntExtra(ShareProessor.MSGID,0);
-        hashMap = (HashMap<String, Object>) getIntent().getSerializableExtra(ShareProessor.PARAMMAP);
+        hashMap = (HashMap<String, Object>) getIntent().getSerializableExtra(RPCUMShare.PARAMMAP);
     }
 
     @Override
@@ -84,11 +86,11 @@ public class MainActivity extends AppCompatActivity {
         Canvas canvas = new Canvas(bitmap);
 
         canvas.drawColor(Color.RED);
-        imageView.setImageBitmap(bitmap);
+        //imageView.setImageBitmap(bitmap);
         UMImage umImage = new UMImage(this,bitmap);
 
         UMImage umImage1 = new UMImage(this, BitmapFactory.decodeResource(getResources(),R.drawable.sina_web_default));
-        imageView.setImageBitmap(umImage1.asBitmap());
+        //imageView.setImageBitmap(umImage1.asBitmap());
         new ShareAction(MainActivity.this).setDisplayList( displaylist )
                 .withTitle("tasdfa")
                 .withText("fawkfjlkadsm")
@@ -116,13 +118,15 @@ public class MainActivity extends AppCompatActivity {
 
     void share2(HashMap<String,Object> hashMap, final int msgid){
 
-        final DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
+        //final DispatchAgent dispatchAgent = new DispatchAgent(BaseProcessor.context);
 
         Log.e("share2","inini");
 
         String[] medias = (String[]) hashMap.get(PlugConstants.SHARE_MEDIAS);
         if(medias == null){
-            dispatchAgent.reply(msgid,false,"share medias is null");
+            //dispatchAgent.reply(msgid,false,"share medias is null");
+            ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+            objectPool.popObject().call(false,"share medias is null");
             return;
         }
         final SHARE_MEDIA[] displaylist = getShareMedias(medias);
@@ -147,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
             if(bitmap != null){
                 Log.e("bitmap","not null");
                 umImage = new UMImage(this,bitmap);
-                imageView.setImageBitmap(bitmap);
+                //imageView.setImageBitmap(bitmap);
             }
 
             String targetUrl = (String) hashMap.get(PlugConstants.TARGET_URL);
@@ -190,32 +194,42 @@ public class MainActivity extends AppCompatActivity {
                 shareAction.withTargetUrl(targetUrl);
             }
             if(shareAction == null){
-                dispatchAgent.reply(msgid,false,"shareAction is null");
+                //dispatchAgent.reply(msgid,false,"shareAction is null");
+                ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+                objectPool.popObject().call(false,"shareAction is null");
                 return;
             }
             shareAction.setCallback(new UMShareListener() {
                 @Override
                 public void onResult(SHARE_MEDIA share_media) {
                     Log.e("shareresult",share_media.name());
-                    dispatchAgent.reply(msgid,true,share_media.name());
+                    //dispatchAgent.reply(msgid,true,share_media.name());
+                    ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+                    objectPool.popObject().call(true,share_media.name());
                 }
 
                 @Override
                 public void onError(SHARE_MEDIA share_media, Throwable throwable) {
-                    dispatchAgent.reply(msgid,false,throwable);
+                    //dispatchAgent.reply(msgid,false,throwable);
+                    ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+                    objectPool.popObject().call(false,throwable.getMessage());
                     Log.e("shareerror",share_media.name()+""+throwable.getMessage());
                 }
 
                 @Override
                 public void onCancel(SHARE_MEDIA share_media) {
-                    dispatchAgent.reply(msgid,false,"cancel");
+                    //dispatchAgent.reply(msgid,false,"cancel");
+                    ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+                    objectPool.popObject().call(false,"cancel");
                     Log.e("sharecancel",share_media.name());
                 }
             });
             shareAction.open();
         } catch (Exception e) {
             e.printStackTrace();
-            dispatchAgent.reply(msgid,false,e);
+            //dispatchAgent.reply(msgid,false,e);
+            ObjectPool<Action2<Boolean,String>> objectPool = (ObjectPool<Action2<Boolean, String>>) getIntent().getSerializableExtra("rpc_callback");
+            objectPool.popObject().call(false,e.getMessage());
         }
     }
 

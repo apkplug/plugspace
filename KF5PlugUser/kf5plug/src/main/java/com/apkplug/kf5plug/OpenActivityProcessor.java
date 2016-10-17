@@ -17,6 +17,11 @@ public class OpenActivityProcessor extends BaseProcessor{
 
     @Override
     public void Receive(URI uri, HashMap<String, Object> hashMap) {
+        UserHelper.userName = (String) hashMap.get(UserHelper.USERNAME);
+        UserHelper.userPhone = (String) hashMap.get(UserHelper.USERPHONE);
+        UserHelper.userEmail = (String) hashMap.get(UserHelper.USEREMAIL);
+        UserHelper.appId = (String) hashMap.get(UserHelper.APPID);
+        UserHelper.helpAddress = (String) hashMap.get(UserHelper.HELPADDRESS);
         try {
             Intent intent = new Intent();
             intent.setClassName(context.getBundleContext(),"com.apkplug.kf5plug.MainActivity");

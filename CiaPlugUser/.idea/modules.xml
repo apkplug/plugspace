@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/CiaPlugUser.iml" filepath="$PROJECT_DIR$/CiaPlugUser.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/caiplug/caiplug.iml" filepath="$PROJECT_DIR$/caiplug/caiplug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commoninterface/commoninterface.iml" filepath="$PROJECT_DIR$/commoninterface/commoninterface.iml" />
     </modules>
   </component>
 </project>

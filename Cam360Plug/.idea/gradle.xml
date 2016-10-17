@@ -11,16 +11,10 @@
             <option value="$PROJECT_DIR$/PG_Edit_SDK" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/cam360plug" />
+            <option value="$PROJECT_DIR$/libcommoninterface" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/PG_Edit_SDK" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/cam360plug" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

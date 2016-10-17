@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QlivePlugUser.iml" filepath="$PROJECT_DIR$/QlivePlugUser.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" filepath="$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/plug1/plug1.iml" filepath="$PROJECT_DIR$/plug1/plug1.iml" />
     </modules>
   </component>

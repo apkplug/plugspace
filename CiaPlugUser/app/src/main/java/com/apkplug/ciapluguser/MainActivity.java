@@ -9,7 +9,11 @@ import android.widget.EditText;
 import com.apkplug.trust.PlugManager;
 import com.apkplug.trust.common.listeners.OnInstallListener;
 import com.apkplug.trust.data.PlugInfo;
+import com.common.ICaiVerifyCallback;
+import com.common.ICiaInit;
+import com.common.ICiaVerify;
 
+import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
 import org.apkplug.Bundle.dispatch.DispatchAgent;
 import org.apkplug.Bundle.dispatch.WorkerCallback;
 import org.apkplug.app.FrameworkFactory;
@@ -44,7 +48,15 @@ public class MainActivity extends AppCompatActivity {
             public void onInstallSuccess(org.osgi.framework.Bundle bundle, PlugInfo plugInfo) {
                 Log.e("isntall s",bundle.getName());
 
-                //initcia();
+                BundleRPCAgent agent = new BundleRPCAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
+
+                try {
+                    ICiaInit iCiaInit = agent.syncCall("apkplug://cia/rpc/init", ICiaInit.class);
+                    boolean init = iCiaInit.init("6c16f74868044396a3d0bcd2443b7f0c", "338611e4c15e4152bf59ca71e742a269");
+                    Log.e("init",init+"");
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
 
             }
 
@@ -52,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
             public void onInstallFailuer(int i, PlugInfo plugInfo, String s) {
                 Log.e("install f",s);
                 //initcia();
+                BundleRPCAgent agent = new BundleRPCAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
+
+                try {
+                    ICiaInit iCiaInit = agent.syncCall("apkplug://cia/rpc/init", ICiaInit.class);
+                    boolean init = iCiaInit.init("6c16f74868044396a3d0bcd2443b7f0c", "338611e4c15e4152bf59ca71e742a269");
+                    Log.e("init",init+"");
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
             }
 
             @Override
@@ -88,27 +109,50 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClick(View view){
-        DispatchAgent dispatchAgent = new DispatchAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
+//        DispatchAgent dispatchAgent = new DispatchAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
+//
+//        HashMap<String,Object> params = new HashMap<String, Object>();
+//        params.put("phone",mPhoneEt.getText().toString());
+//        params.put("AppId","6c16f74868044396a3d0bcd2443b7f0c");
+//        params.put("AuthKey","338611e4c15e4152bf59ca71e742a269");
+//        dispatchAgent.call("apkplug://cia/verify", params, new WorkerCallback() {
+//            @Override
+//            public void reply(URI uri, Object... objects) throws Exception {
+//                Log.e("reply",objects[0].toString()+" "+objects[1]);
+//            }
+//
+//            @Override
+//            public void timeout(URI uri) throws Exception {
+//
+//            }
+//
+//            @Override
+//            public void Exception(URI uri, Throwable throwable) {
+//                Log.e("exception",throwable.getMessage());
+//            }
+//        });
 
-        HashMap<String,Object> params = new HashMap<String, Object>();
-        params.put("phone",mPhoneEt.getText().toString());
-        params.put("AppId","6c16f74868044396a3d0bcd2443b7f0c");
-        params.put("AuthKey","338611e4c15e4152bf59ca71e742a269");
-        dispatchAgent.call("apkplug://cia/verify", params, new WorkerCallback() {
-            @Override
-            public void reply(URI uri, Object... objects) throws Exception {
-                Log.e("reply",objects[0].toString()+" "+objects[1]);
+        BundleRPCAgent agent = new BundleRPCAgent(FrameworkFactory.getInstance().getFrame().getSystemBundleContext());
+        try {
+            ICiaVerify verify = agent.syncCall("apkplug://cia/rpc/verify", ICiaVerify.class);
+            String phone = mPhoneEt.getText().toString();
+            if(phone==null||"".equals(phone)){
+                Log.e("error","电话号码不对");
+                return;
             }
+            verify.verify("6c16f74868044396a3d0bcd2443b7f0c", "338611e4c15e4152bf59ca71e742a269", phone, new ICaiVerifyCallback() {
+                @Override
+                public void onSuccess(String msg) {
+                    Log.e("success",msg);
+                }
 
-            @Override
-            public void timeout(URI uri) throws Exception {
-
-            }
-
-            @Override
-            public void Exception(URI uri, Throwable throwable) {
-                Log.e("exception",throwable.getMessage());
-            }
-        });
+                @Override
+                public void onFail(String msg) {
+                    Log.e("fail",msg);
+                }
+            });
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
     }
 }

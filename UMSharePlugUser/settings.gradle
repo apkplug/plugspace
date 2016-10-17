@@ -1,1 +1,1 @@
-include ':app', ':umplug'
+include ':app', ':umplug', ':libcommoninterface'

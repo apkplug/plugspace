@@ -1,1 +1,1 @@
-include ':app', ':caiplug'
+include ':app', ':caiplug', ':commoninterface'

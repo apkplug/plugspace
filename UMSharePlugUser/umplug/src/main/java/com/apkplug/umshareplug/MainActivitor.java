@@ -14,12 +14,12 @@ import org.osgi.framework.BundleContext;
  * Created by qinfeng on 2016/8/31.
  */
 public class MainActivitor implements BundleActivator {
-
+    public static BundleContext bundleContext;
     OSGIServiceAgent<ClassHookService> agentclass=null;
     ImpClassHook hook=new ImpClassHook();
     @Override
     public void start(BundleContext bundleContext) throws Exception {
-
+        this.bundleContext = bundleContext;
         Log.e("start","start in");
         agentclass=new OSGIServiceAgent<ClassHookService>(bundleContext,ClassHookService.class);
         try {

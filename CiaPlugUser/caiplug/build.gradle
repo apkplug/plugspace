@@ -22,4 +22,5 @@ android {
 dependencies {
     compile files('libs/cia_sdk_v_2_3_1.jar')
     provided files('libs/osgi3.9.0.jar')
+    provided project(':commoninterface')
 }

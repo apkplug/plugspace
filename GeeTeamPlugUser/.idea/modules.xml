@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/GeeTeamPlug/GeeTeamPlug.iml" filepath="$PROJECT_DIR$/GeeTeamPlug/GeeTeamPlug.iml" />
       <module fileurl="file://$PROJECT_DIR$/GeeTeamPlugUser.iml" filepath="$PROJECT_DIR$/GeeTeamPlugUser.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" filepath="$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk/sdk.iml" filepath="$PROJECT_DIR$/sdk/sdk.iml" />
     </modules>
   </component>

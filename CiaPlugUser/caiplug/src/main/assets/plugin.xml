@@ -20,4 +20,12 @@
             className="cn.ciaapp.cia_example.VerifyProcessor"
         />
 
+    <rpc-processor uri="apkplug://cia/rpc/verify"
+        className="cn.ciaapp.cia_example.RPCCaiVerify"
+        />
+
+    <rpc-processor uri="apkplug://cia/rpc/init"
+        className="cn.ciaapp.cia_example.RPCCaiInit"
+    />
+
 </plugin-features>

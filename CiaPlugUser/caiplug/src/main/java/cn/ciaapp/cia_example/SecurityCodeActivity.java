@@ -7,6 +7,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.common.ICaiVerifyCallback;
+
+import org.apkplug.Bundle.bundlerpc.ObjectPool;
 import org.apkplug.Bundle.dispatch.DispatchAgent;
 
 import cn.ciaapp.sdk.CIAService;
@@ -16,14 +19,14 @@ import cn.ciaapp.sdk.VerificationListener;
 public class SecurityCodeActivity extends Activity implements View.OnClickListener {
 
     private EditText mCodeEt;
-    private int msgid;
+    private ObjectPool<ICaiVerifyCallback> objectPool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_security_code);
 
-        msgid = getIntent().getIntExtra("msgid",0);
+        objectPool = getIntent().getParcelableExtra("rpc_callback");
 
         // 设置下一步按钮的点击事件
         findViewById(R.id.bt_next).setOnClickListener(this);
@@ -73,21 +76,25 @@ public class SecurityCodeActivity extends Activity implements View.OnClickListen
                     case CIAService.VERIFICATION_SUCCESS: // 验证成功
                         // TODO 进入下一步业务逻辑
                         showToast("验证成功");
-                        dispatchAgent.reply(msgid,true);
+                        //dispatchAgent.reply(msgid,true);
+                        objectPool.popObject().onSuccess("验证成功");
                         finish();
                         break;
                     case CIAService.SECURITY_CODE_WRONG: // 验证码输入错误
                         showToast("验证码错误");
-                        dispatchAgent.reply(msgid,false,"验证码错误");
+                        //dispatchAgent.reply(msgid,false,"验证码错误");
+                        objectPool.popObject().onFail("验证码错误");
                         break;
                     case CIAService.SECURITY_CODE_EXPIRED:  // 验证码失效，需要重新验证
                         showToast("验证码失效，请重新验证");
-                        dispatchAgent.reply(msgid,false,"验证码失效，请重新验证");
+                        //dispatchAgent.reply(msgid,false,"验证码失效，请重新验证");
+                        objectPool.popObject().onFail("验证码失效，请重新验证");
                         finish();
                         break;
                     case CIAService.SECURITY_CODE_EXPIRED_INPUT_OVERRUN:    // 验证码输入错误次数过多(3次)，需要重新验证
                         showToast("验证码输入错误超过3次，请重新验证");
-                        dispatchAgent.reply(msgid,false,"验证码输入错误超过3次，请重新验证");
+                        //dispatchAgent.reply(msgid,false,"验证码输入错误超过3次，请重新验证");
+                        objectPool.popObject().onFail("验证码输入错误超过3次，请重新验证");
                         finish();
                         break;
                 }

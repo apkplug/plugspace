@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UMSharePlugUser.iml" filepath="$PROJECT_DIR$/UMSharePlugUser.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" filepath="$PROJECT_DIR$/libcommoninterface/libcommoninterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/umplug/umplug.iml" filepath="$PROJECT_DIR$/umplug/umplug.iml" />
     </modules>
   </component>

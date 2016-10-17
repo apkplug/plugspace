@@ -42,6 +42,7 @@ dependencies {
     compile files('libs/umeng_social_sdk.jar')
     compile files('libs/weiboSDKCore_3.1.4.jar')
     provided files('libs/osgi3.9.0.jar')
+    provided project(':libcommoninterface')
 }
 task copyplug(type:Copy,group:"test",dependsOn:[build]){
     from ("build/outputs/apk/umplug-debug.apk")

@@ -4,17 +4,23 @@
 <plugin-features
     Bundle-Name="Cam360Plug"
     Bundle-SymbolicName="com.apkplug.cam360"
-    Bundle-Version="1.0.0"
+    Bundle-Version="2.0.0"
     date="2016.08.26"
     provider-name="APKPLUG"
     start-level ="1"
     start-up="true"
     Bundle-Activator="com.apkplug.cam360plug.MainActivitor"
-
+    plug_id="plug_user_20uxDq9pzUI"
+    Use-Host-MetaData="true"
 >
     <processor
         uri="apkplug://cam360/start"
         className="com.apkplug.cam360plug.StartProcessor"
     />
+
+    <rpc-processor
+        uri="apkplug://cam360/rpc/start"
+        className="com.apkplug.cam360plug.RPCCam360Start"
+        />
 
 </plugin-features>
