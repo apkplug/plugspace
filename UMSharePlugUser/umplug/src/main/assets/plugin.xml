@@ -4,7 +4,7 @@
 <plugin-features
     Bundle-Name="UMSharePlug"
     Bundle-SymbolicName="com.apkplug.umshareplug"
-    Bundle-Version="4.0.8"
+    Bundle-Version="4.0.9"
     Bundle-Activator="com.apkplug.umshareplug.MainActivitor"
     date="2016.08.17"
     provider-name="APKPLUG"

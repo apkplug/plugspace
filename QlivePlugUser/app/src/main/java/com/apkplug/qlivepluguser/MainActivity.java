@@ -6,20 +6,12 @@ import android.util.Log;
 import android.view.View;
 
 import com.apkplug.trust.PlugManager;
-import com.apkplug.trust.common.listeners.OnInstallListener;
 import com.apkplug.trust.common.listeners.OnInstallSLPlugListener;
-import com.apkplug.trust.data.PlugInfo;
-import com.common.IQLLogin;
+import com.qlive.common.IQLLogin;
 
 import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
 import org.apkplug.Bundle.bundlerpc.functions.Action2;
-import org.apkplug.Bundle.dispatch.DispatchAgent;
-import org.apkplug.Bundle.dispatch.WorkerCallback;
 import org.apkplug.app.FrameworkFactory;
-
-import java.net.URI;
-import java.security.PublicKey;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 

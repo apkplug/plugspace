@@ -7,19 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.apkplug.trust.PlugManager;
-import com.apkplug.trust.common.listeners.OnCallDPBySLListener;
 import com.apkplug.trust.common.listeners.OnInstallListener;
 import com.apkplug.trust.data.PlugInfo;
-import com.common.IGTRPCCallback;
-import com.common.IShowGTDialog;
+import com.geeteam.common.IGTRPCCallback;
+import com.geeteam.common.IShowGTDialog;
 
 import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
-import org.apkplug.Bundle.dispatch.DispatchAgent;
-import org.apkplug.Bundle.dispatch.WorkerCallback;
 import org.apkplug.app.FrameworkFactory;
-
-import java.net.URI;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -3,7 +3,7 @@ package com.apkplug.umshareplug;
 import android.content.Intent;
 import android.util.Log;
 
-import com.common.IUMShare;
+import com.umshare.common.IUMShare;
 import com.umeng.socialize.PlatformConfig;
 
 import org.apkplug.Bundle.bundlerpc.ObjectPool;
@@ -11,7 +11,6 @@ import org.apkplug.Bundle.bundlerpc.functions.Action2;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by qinfeng on 2016/10/13.

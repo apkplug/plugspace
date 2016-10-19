@@ -10,10 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.apkplug.trust.PlugManager;
-import com.apkplug.trust.common.listeners.OnInstallListener;
 import com.apkplug.trust.common.listeners.OnInstallSLPlugListener;
-import com.apkplug.trust.data.PlugInfo;
-import com.common.IUMShare;
+import com.umshare.common.IUMShare;
 
 import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
 import org.apkplug.Bundle.bundlerpc.functions.Action2;

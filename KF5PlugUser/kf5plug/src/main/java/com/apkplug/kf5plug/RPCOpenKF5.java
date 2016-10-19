@@ -3,7 +3,7 @@ package com.apkplug.kf5plug;
 import android.content.Intent;
 import android.util.Log;
 
-import com.common.IKF5OpenKfActivity;
+import com.kf5.common.IKF5OpenKfActivity;
 
 /**
  * Created by qinfeng on 2016/10/12.

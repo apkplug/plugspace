@@ -7,10 +7,8 @@ import android.view.View;
 
 import com.apkplug.trust.PlugManager;
 import com.apkplug.trust.common.listeners.OnGetRPCInstanceListener;
-import com.apkplug.trust.common.listeners.OnInstallSLPlugListener;
-import com.common.IZxingStart;
+import com.zxing.common.IZxingStart;
 
-import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
 import org.apkplug.Bundle.bundlerpc.functions.Action2;
 import org.apkplug.app.FrameworkFactory;
 

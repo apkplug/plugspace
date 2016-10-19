@@ -4,10 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.common.IQLLogin;
+import com.qlive.common.IQLLogin;
 import com.qiniu.qlive.activity.MainActivity;
 import com.qiniu.qlive.config.APICode;
-import com.qiniu.qlive.processores.LoginProcessor;
 import com.qiniu.qlive.service.UserService;
 import com.qiniu.qlive.service.result.LoginResult;
 import com.qiniu.qlive.utils.Account;
@@ -50,6 +49,7 @@ public class RPCQLiveLogin implements IQLLogin {
                     Account.save(context, mobile, password);
                     Tools.writeSession(context, loginResult.getSessionId(), loginResult.getUserName());
                     Intent intent = new Intent(context, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                     //dispatchAgent.reply(getMsgId(),true,"success");
                     action2.call(true,"success");

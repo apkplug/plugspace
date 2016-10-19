@@ -2,7 +2,7 @@ package com.apkplug.cam360plug;
 
 import android.content.Intent;
 
-import com.common.ICam360Start;
+import com.cam360.common.ICam360Start;
 
 import org.apkplug.Bundle.bundlerpc.ObjectPool;
 import org.apkplug.Bundle.bundlerpc.functions.Action2;

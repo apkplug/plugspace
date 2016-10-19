@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import com.geetest.android.sdk.Geetest;
 import com.geetest.android.sdk.GtDialog;
 import com.geetest.android.sdk.GtDialog.GtListener;
+import com.geetest.android.sdk.RPCShowGTDialog;
 
 public class MainActivity extends Activity {
     public String ss;
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
     //因为可能用户当时所处在低速高延迟网络，所以异步请求可能在后台用时很久才获取到验证的数据。可以自己设计状态指示器, demo仅作演示。
     private ProgressDialog progressDialog;
     private GtAppDlgTask mGtAppDlgTask;
+
 
     // 创建验证码网络管理器实例
     private Geetest captcha = new Geetest(

@@ -6,15 +6,11 @@ import android.util.Log;
 import android.view.View;
 
 import com.apkplug.trust.PlugManager;
-import com.apkplug.trust.common.listeners.OnInstallListener;
 import com.apkplug.trust.common.listeners.OnInstallSLPlugListener;
-import com.apkplug.trust.data.PlugInfo;
-import com.common.IKF5OpenKfActivity;
+import com.kf5.common.IKF5OpenKfActivity;
 
 import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
 import org.apkplug.app.FrameworkFactory;
-
-import java.security.PublicKey;
 
 public class MainActivity extends AppCompatActivity {
     public static String PUBLICKEY = "MIGdMA0GCSqGSIb3DQEBAQUAA4GLADCBhwKBgQDznY/txkI/prtOi3pofTkhu6bdPKucyRzvQnkqsv/FNGhos0+QwPCy17PT8ftP60PUyLXzTiF5PW901sEJYHx8KVc/b+j41rvXdgVGJ/i8t26vxZR7FxKnuxc9TjJ3IFSvhiZY6NaOGf9l/qv6xbD+s6SEMZqBR40q2lpUe0VorwIBAw==";

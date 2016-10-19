@@ -21,5 +21,5 @@ dependencies {
     compile project(':kF5SDKLibrary')
     compile 'com.android.support:support-v4:23.+'
     provided files('libs/osgi3.9.0.jar')
-    provided project(':libcommoninterface')
+    compile project(':libcommoninterface')
 }

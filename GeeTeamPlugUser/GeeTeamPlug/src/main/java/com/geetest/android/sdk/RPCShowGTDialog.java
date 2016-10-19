@@ -7,8 +7,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.common.IGTRPCCallback;
-import com.common.IShowGTDialog;
+import com.geeteam.common.IGTRPCCallback;
+import com.geeteam.common.IShowGTDialog;
 import com.geetest.android.MainActivitor;
 
 import org.json.JSONObject;

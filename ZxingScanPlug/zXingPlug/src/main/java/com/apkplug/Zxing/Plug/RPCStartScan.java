@@ -2,7 +2,7 @@ package com.apkplug.Zxing.Plug;
 
 import android.content.Intent;
 
-import com.common.IZxingStart;
+import com.zxing.common.IZxingStart;
 
 import org.apkplug.Bundle.bundlerpc.ObjectPool;
 import org.apkplug.Bundle.bundlerpc.functions.Action2;

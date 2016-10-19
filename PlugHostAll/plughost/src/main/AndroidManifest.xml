@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apkplug.baseplugmodle">
+
+    <!-- apkplug -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BIND_MIDI_DEVICE_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!--zxing -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- 友盟 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
+    <!--环信-->
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 高德 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    //定位包、导航包需要的额外权限（注：基础权限也需要）
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- 百度-->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name=".MainApplication"
+        android:theme="@style/AppTheme">
+
+        <!--change -->
+        <meta-data
+            android:name="apkplug_appid"
+            android:value="app_1Tk78DntalG" />
+        <meta-data
+            android:name="apkplug_containerid"
+            android:value="container1" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="684d9c5b266eb8a80aa75e712865b041" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="gi3sS2KzHMBGmvFvgxc7wPfmS2RikmUn" />
+
+        <meta-data android:name="EASEMOB_APPKEY"  android:value="apkplug-libh#easeplug" />
+
+        <meta-data android:name="UMENG_APPKEY" android:value="57031f04e0f55ac945001281" > </meta-data>
+        <meta-data android:name="EDIT_SDK_KEY" android:value="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" > </meta-data>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="org.apkplug.app.apkplugActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+            </intent-filter>
+
+        </activity>
+
+        <service android:name="com.apkplug.libmerge.common.MergeServeice" android:process=":merge" />
+        <service android:name="org.apkplug.app.apkplugService"/>
+        <!--change -->
+        <provider android:name="org.apkplug.app.apkplugProvider" android:authorities="com.apkplug.hostall.apkplugprovider"/>
+
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1105439618" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize" android:exported="false" >
+        </activity>
+        <activity
+            android:name=".WBShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.sina.weibo.sdk.net.DownloadService"
+            android:exported="false">
+        </service>
+
+        <activity android:name="com.apkplug.easemobplug.ui.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            >
+
+        </activity>
+    </application>
+
+</manifest>

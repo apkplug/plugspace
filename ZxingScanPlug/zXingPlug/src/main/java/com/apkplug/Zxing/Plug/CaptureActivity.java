@@ -26,8 +26,6 @@ import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.widget.Toast;
 
-import com.apkplug.Zxing.Plug.processor.StartZxingProcessor;
-import com.common.IZxingStart;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.apkplug.Zxing.Plug.camera.CameraManager;
@@ -36,7 +34,6 @@ import com.apkplug.Zxing.Plug.decoding.InactivityTimer;
 import com.apkplug.Zxing.Plug.view.ViewfinderView;
 
 
-import org.apkplug.Bundle.bundlerpc.BundleRPCAgent;
 import org.apkplug.Bundle.bundlerpc.ObjectPool;
 import org.apkplug.Bundle.bundlerpc.functions.Action2;
 

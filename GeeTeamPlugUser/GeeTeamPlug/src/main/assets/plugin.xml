@@ -4,7 +4,7 @@
 <plugin-features
     Bundle-Name="GeeTeamPlug"
     Bundle-SymbolicName="com.geetest.android.demo"
-    Bundle-Version="2.0.0"
+    Bundle-Version="3.0.1"
     date="2016.08.26"
     provider-name="APKPLUG"
     start-level ="1"

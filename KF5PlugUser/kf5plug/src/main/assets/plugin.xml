@@ -4,7 +4,7 @@
 <plugin-features
     Bundle-Name="KF5Plug"
     Bundle-SymbolicName="com.kf5sdk.simpleapp"
-    Bundle-Version="3.0.0"
+    Bundle-Version="4.0.0"
     date="2016.08.23"
     provider-name="APKPLUG"
     start-level ="1"

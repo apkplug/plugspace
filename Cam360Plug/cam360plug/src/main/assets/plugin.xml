@@ -4,7 +4,7 @@
 <plugin-features
     Bundle-Name="Cam360Plug"
     Bundle-SymbolicName="com.apkplug.cam360"
-    Bundle-Version="2.0.0"
+    Bundle-Version="3.0.1"
     date="2016.08.26"
     provider-name="APKPLUG"
     start-level ="1"
@@ -12,6 +12,7 @@
     Bundle-Activator="com.apkplug.cam360plug.MainActivitor"
     plug_id="plug_user_20uxDq9pzUI"
     Use-Host-MetaData="true"
+    Short-Links="http://yyfr.net/q1z"
 >
     <processor
         uri="apkplug://cam360/start"
