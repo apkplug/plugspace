@@ -1,0 +1,1 @@
+include ':app', ':easeplug', ':easeUI_CN', ':libcommoninterface'
